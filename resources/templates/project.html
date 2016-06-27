@@ -1,0 +1,25 @@
+<header *ngIf="project">
+    <h1>{{ project.name }}</h1>
+    <ul class="contexts">
+        <li class="timespan"><p>{{ helpers.formatTimespan(project.startDate, project.endDate) }}</p></li>
+        <li class="github" *ngIf="project.github"><a href="{{ project.github }}">GitHub</a></li>
+        <li class="link" *ngIf="project.link"><a href="{{ project.link }}">{{ project.linkTitle }}</a></li>
+    </ul>
+</header>
+<div class="introduction" *ngIf="project">
+    <div class="col-container">
+        <div class="left-col" *ngIf="project.languages.length">
+            <h3>Languages used:</h3>
+            <ul>
+                <li *ngFor="#language of project.languages">{{ language }}</li>
+            </ul>
+        </div>
+        <div class="right-col" *ngIf="project.frameworks.length">
+            <h3>Frameworks and libraries used:</h3>
+            <ul>
+                <li *ngFor="#frameworks of project.frameworks">{{ frameworks }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<article *ngIf="project" [innerHTML]="project.desctiption"></article>

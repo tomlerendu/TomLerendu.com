@@ -1,0 +1,17 @@
+<header *ngIf="!post">
+    <h1>Blog</h1>
+</header>
+
+<article *ngIf="!post">
+    <loading></loading>
+</article>
+
+
+<header *ngIf="post">
+    <h1>{{ post.title }}</h1>
+    <ul class="contexts">
+        <li class="timespan"><p>{{ post.posted | date:'mediumDate' }}</p></li>
+    </ul>
+</header>
+
+<article *ngIf="post" [innerHTML]="post.content"></article>

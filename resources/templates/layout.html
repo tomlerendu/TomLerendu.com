@@ -1,0 +1,27 @@
+<div class="container">
+    <header id="site-header">
+        <h1><a [routerLink]="['Home']">Tom Lerendu</a></h1>
+        <p id="tagline">A Web and Mobile developer based in Manchester, UK. Experienced in PHP, JavaScript and Swift.</p>
+        <nav>
+            <ul id="main-navigation">
+                <li [class.active]="isRouteActive('')">
+                    <a [routerLink]="['Home']">About</a>
+                </li>
+                <li [class.active]="isRouteActive('projects')">
+                    <a [routerLink]="['Projects']">Projects</a>
+                </li>
+                <li [class.active]="isRouteActive('blogs')">
+                    <a [routerLink]="['Blogs']">Blog</a>
+                </li>
+            </ul>
+            <ul id="sub-navigation">
+                <li><a class="email-link" [routerLink]="['Contact']"></a></li>
+                <li><a class="github-link" href="https://github.com/tomlerendu"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</div>

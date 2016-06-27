@@ -1,0 +1,333 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    min-width: 300px;
+    background-color: #f3f3f3;
+    color: #3a3a3a;
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.75rem;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #4a83b5;
+}
+
+.loading {
+    width: 100%;
+    height: 200px;
+    background: url('../images/loading.gif') center no-repeat;
+}
+
+.not-found {
+    display: block;
+    text-align: center;
+    line-height: 3rem;
+    margin: 8rem;
+}
+
+#site-header {
+    width: 100%;
+    background-color: #343434;
+    color: #e1e1e1;
+    padding: 1rem 0;
+}
+
+#site-header a {
+    color: #e1e1e1;
+}
+
+
+#site-header h1 {
+    text-align: center;
+    padding: 1rem;
+}
+
+#site-header nav {
+
+}
+
+ul#main-navigation {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    background: #464646;
+    border-top: 1px solid #6c6c6c;
+    border-bottom: 1px solid #6c6c6c;
+}
+
+ul#main-navigation li {
+    display: inline;
+}
+
+ul#main-navigation li a {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+ul#main-navigation li.active a {
+    background: #515151;
+}
+
+ul#sub-navigation {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 1.5rem;
+}
+
+ul#sub-navigation li {
+    display: inline-block;
+    margin: 1rem;
+}
+
+ul#sub-navigation li a {
+    height: 27px;
+    display: inline-block;
+}
+
+ul#sub-navigation li a.github-link {
+    background: url('../images/github_logo.png');
+    width: 100px;
+}
+ul#sub-navigation li a.email-link {
+    background: url('../images/email_icon.png');
+    width: 39px;
+}
+
+p#tagline {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+/*
+ * Main Column
+ */
+
+main {
+    background: white;
+}
+
+/* Main column header */
+
+main header {
+    background: #3982dd;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    padding: 1rem 2rem;
+}
+
+main header h1 {
+    padding: 0 0;
+    text-align: center;
+}
+
+main header ul.contexts {
+    list-style-type: none;
+    padding: 0.25rem 0;
+    vertical-align: middle;
+}
+
+main header ul.contexts li {
+    text-align: center;
+    line-height: 3rem;
+}
+
+main header ul.contexts li a, main header ul.contexts li p {
+    display: inline-block;
+    line-height: 2rem;
+    padding-left: 2rem;
+    margin: 0;
+}
+
+main header ul.contexts li.github a {
+    background: url('../images/context_github.png') left no-repeat;
+}
+
+main header ul.contexts li.timespan p {
+    background: url('../images/context_timespan.png') left no-repeat;
+}
+
+main header ul.contexts li.link a {
+    background: url('../images/context_link.png') left no-repeat;
+}
+
+main header a {
+    color: white;
+}
+
+/* Main column introduction */
+
+main .introduction {
+    background: #f8f6f5;
+    color: #8c8c8c;
+    padding: 0.5rem 2rem;
+    font-family: 'Open Sans', sans-serif;
+    margin: 2rem 2rem 0;
+    box-shadow: 0 0 0.25rem 0 rgba(116, 116, 116, 0.35);
+}
+
+/* Main column content */
+
+main article {
+    padding: 2rem;
+}
+
+main article img {
+    max-width: 90%;
+    box-shadow: 0 0 0.25rem 0 rgba(116, 116, 116, 0.5);
+    margin: 2rem auto;
+    display: block;
+}
+
+/* Projects */
+
+ul.project-tags {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.75rem;
+}
+
+ul.project-tags li {
+    display: inline-block;
+    cursor: pointer;
+    background: #dedede;
+    border: 1px solid #dedede;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    color: #676767;
+}
+
+ul.project-tags li.active {
+    background: #f5f6ba;
+    border: 1px solid #d6d7a7;
+}
+
+ul.projects {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.projects li {
+    margin: 0 0 2.5rem;
+    padding: 1.5rem;
+    background: top left;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+ul.projects li a.more-button {
+    background: rgba(30, 30, 30, 0.25);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+button.project-clear-button {
+    font-size: 0.8rem;
+    padding: 0 0.25rem;
+    margin: 0 0.5rem;
+}
+
+
+/* Posts */
+
+ul.posts {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.posts li.post {
+    border-bottom: 1px solid #c4c4c4;
+}
+
+ul.posts li.post time {
+    color: gray;
+}
+
+/* Homepage list */
+
+ul.homepage-list {
+    list-style-type: none;
+    padding: 0;
+    box-shadow: 0 0 0.4rem 0 rgba(116, 116, 116, 0.5);
+    margin: 0 0 2rem 0;
+}
+
+ul.homepage-list li.header-item {
+    background: #3982dd;
+    padding: 1rem;
+    color: white;
+}
+
+ul.homepage-list li.header-item h2 {
+    margin: 0;
+}
+
+ul.homepage-list li.content-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 2rem;
+}
+
+ul.homepage-list li.content-item:last-child {
+    border-bottom: none;
+}
+
+ul.homepage-list li.content-item h3 {
+    margin: 0;
+}
+
+ul.homepage-list li.content-item time {
+    color: gray;
+    font-size: 0.75rem;
+    float: right;
+    margin-left: 1rem;
+}
+
+/* Columns */
+
+.col-heading {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* Contact form */
+
+form.contact-form {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form.contact-form p label {
+
+}
+
+form.contact-form p input, form.contact-form p textarea {
+    width: 100%;
+    border: 2px solid #e2e2e2;
+}
+
+form.contact-form textarea {
+    height: 8rem;
+}
+
+form.contact-form input.contact-form-error, form.contact-form textarea.contact-form-error {
+    border-color: #e27276;
+}

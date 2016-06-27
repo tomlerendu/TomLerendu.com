@@ -1,0 +1,10 @@
+*.map
+node_modules
+*.js
+npm-debug.log.*
+environment.ts
+typings/*
+typings.json
+
+#IDE
+.idea

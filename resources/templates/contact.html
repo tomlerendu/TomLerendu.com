@@ -1,0 +1,51 @@
+<header>
+    <h1>Contact Me</h1>
+</header>
+<div class="introduction">
+    <p>Please use the form below to contact me. I'll try to respond within a few days.</p>
+</div>
+<article *ngIf="shouldDisplayForm()">
+    <form class="contact-form" (ngSubmit)="send()">
+        <p>
+            <label for="contactName">Name</label>
+            <input
+                    id="contactName"
+                    [ngClass]="{'contact-form-error': !contactName.valid && !contactName.pristine}"
+                    [(ngModel)]="contact.name"
+                    type="text"
+                    #contactName="ngForm"
+                    required
+            >
+        </p>
+        <p>
+            <label for="contactEmail">Email</label>
+            <input
+                    id="contactEmail"
+                    [ngClass]="{'contact-form-error': !contactEmail.valid && !contactEmail.pristine}"
+                    [(ngModel)]="contact.email"
+                    type="email"
+                    #contactEmail="ngForm"
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                    required
+            >
+        </p>
+        <p>
+            <label for="contactMessage">Message</label>
+            <textarea
+                    id="contactMessage"
+                    [ngClass]="{'contact-form-error': !contactMessage.valid && !contactMessage.pristine}"
+                    [(ngModel)]="contact.message"
+                    #contactMessage="ngForm"
+                    required
+            ></textarea>
+        </p>
+        <button type="submit">Send</button>
+    </form>
+</article>
+<article *ngIf="shouldDisplayLoading()">
+    <loading></loading>
+</article>
+<article *ngIf="shouldDisplayDone()">
+    <p>Thanks. I'll get back to you soon.</p>
+    <button (click)="resetForm()">Send Another</button>
+</article>

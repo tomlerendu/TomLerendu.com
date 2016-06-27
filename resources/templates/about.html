@@ -1,0 +1,45 @@
+<header>
+    <h1>About Me</h1>
+</header>
+<article>
+    <div class="col-container">
+        <div class="left-col">
+            <h2 class="col-heading">My Work</h2>
+            <ul *ngIf="projects" class="projects">
+                <li *ngFor="#project of projects" class="left-project" [ngStyle]="{
+                        'background-image': 'url(\'' + helpers.formatImage(project.background) + '\')',
+                        'color': project.backgroundTextColor
+                        }">
+                    <h3>
+                        <a [routerLink]="['Project', {id: project.slug}]" [ngStyle]="{'color': project.backgroundTextColor}">{{ project.name }}</a>
+                    </h3>
+                    <p>
+                        {{ project.shortDescription }}
+                    </p>
+                </li>
+            </ul>
+            <loading *ngIf="!projects"></loading>
+        </div>
+        <div class="right-col">
+            <ul *ngIf="lifeEvents" class="homepage-list">
+                <li class="header-item"><h2>About</h2></li>
+                <li *ngFor="#event of lifeEvents" class="content-item education">
+                    <time>{{ helpers.formatTimespan(event.startDate, event.endDate) }}</time>
+                    <h3>{{ event.place }}</h3>
+                    <div [innerHtml]="event.tasks"></div>
+                </li>
+            </ul>
+            <ul *ngIf="posts" class="homepage-list">
+                <li class="header-item"><h2>Blog posts</h2></li>
+                <li *ngFor="#post of posts" class="content-item">
+                    <time>{{ dateForPost(post) | date:'mediumDate' }}</time>
+                    <h3>
+                        <a [routerLink]="['Blog', {id: post.slug}]">{{ post.title }}</a>
+                    </h3>
+                    <div [innerHTML]="post.shortContent"></div>
+                </li>
+            </ul>
+            <loading *ngIf="!posts || !lifeEvents"></loading>
+        </div>
+    </div>
+</article>

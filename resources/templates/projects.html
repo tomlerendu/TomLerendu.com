@@ -1,0 +1,40 @@
+<header>
+    <h1>Projects</h1>
+</header>
+
+<div class="introduction" *ngIf="projectsFiltered">
+    <p>These are a selection of projects that I have created. Unless otherwise stated, all work on them is done by me.</p>
+    <ul class="project-tags">
+        <li
+                *ngFor="#tag of languageTags"
+                [ngClass]="{active: isFiltered(tag)}"
+                (click)="toggleFilter(tag)">{{ tag }}
+        </li>
+    </ul>
+    <ul class="project-tags">
+        <li
+                *ngFor="#tag of frameworkTags"
+                [ngClass]="{active: isFiltered(tag)}"
+                (click)="toggleFilter(tag)">{{ tag }}
+        </li>
+    </ul>
+    <p *ngIf="filter">Only showing <b>{{ filter }}</b> projects. <button class="project-clear-button" (click)="clearFilter()">Clear</button></p>
+</div>
+
+<article *ngIf="!projectsFiltered">
+    <loading></loading>
+</article>
+
+<article *ngIf="projectsFiltered">
+    <ul class="projects">
+        <li *ngFor="#project of projectsFiltered" [ngStyle]="{
+            'background-image': 'url(\'' + helpers.formatImage(project.background) + '\')',
+            'color': project.backgroundTextColor
+            }">
+            <h2>
+                <a [routerLink]="['Project', {id: project.slug}]" [ngStyle]="{'color': project.backgroundTextColor}">{{ project.name }}</a>
+            </h2>
+            <p>{{ project.shortDescription }} <a class="more-button" [routerLink]="['Project', {id: project.slug}]">More</a></p>
+        </li>
+    </ul>
+</article>

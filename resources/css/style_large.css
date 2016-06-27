@@ -1,0 +1,93 @@
+html {
+    font-size: 17px;
+}
+
+body {
+    margin: 2rem 4rem;
+}
+
+.container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0;
+    position: relative;
+}
+
+#site-header {
+    width: 25%;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    top: 0;
+    vertical-align: top;
+    font-size: 1rem;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+}
+
+main {
+    margin-left: 25%;
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+    min-height: 35rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+main header {
+    border-radius: 0 0.75rem 0 0;
+}
+
+main header h1 {
+    text-align: left;
+}
+
+ul#main-navigation {
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+ul#main-navigation li a {
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+main header ul.contexts li {
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+ul.projects li {
+    background: top right;
+}
+
+ul.projects li.left-project {
+    background: top left;
+    margin-right: 1rem;
+}
+
+ul.projects li p {
+    margin-right: 15rem;
+}
+
+ul.projects li.left-project p {
+    margin-right: 0;
+}
+
+div.col-container {
+    font-size: 0;
+}
+
+div.left-col, div.right-col {
+    width: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+}
+
+ul.homepage-list {
+    margin-left: 1rem;
+}

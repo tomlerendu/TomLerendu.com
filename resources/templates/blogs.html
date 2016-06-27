@@ -1,0 +1,15 @@
+<header>
+    <h1>Blog</h1>
+</header>
+<article *ngIf="!posts">
+    <loading></loading>
+</article>
+<article *ngIf="posts">
+    <ul class="posts">
+        <li *ngFor="#post of posts" class="post">
+            <h2><a [routerLink]="['Blog', {id: post.slug}]">{{ post.title }}</a></h2>
+            <time>{{ dateForPost(post) | date:'mediumDate' }}</time>
+            <p [innerHTML]="post.content"></p>
+        </li>
+    </ul>
+</article>
