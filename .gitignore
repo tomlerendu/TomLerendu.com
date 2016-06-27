@@ -1,10 +1,11 @@
 *.map
 node_modules
-*.js
+app/*.js
 npm-debug.log.*
 environment.ts
 typings/*
 typings.json
+resources/bundle.js
 
 #IDE
 .idea
