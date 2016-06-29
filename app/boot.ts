@@ -1,4 +1,4 @@
-import 'es6-shim/es6-shim.min.js';
+import 'core-js/client/shim.min.js';
 import 'systemjs/dist/system-polyfills.js';
 import 'angular2/bundles/angular2-polyfills.js';
 
