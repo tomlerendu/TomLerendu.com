@@ -10,6 +10,16 @@ body {
     line-height: 1.75rem;
 }
 
+.incompatible {
+    background: #d9321e;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    padding: 2rem;
+    margin: 2rem;
+    font-size: 0.8rem;
+    display: none;
+}
+
 h1, h2, h3, h4, h5 {
     font-weight: normal;
     font-family: 'Open Sans', sans-serif;
@@ -73,7 +83,7 @@ ul#main-navigation li a {
     font-size: 1.2rem;
 }
 
-ul#main-navigation li.active a {
+ul#main-navigation li a.active {
     background: #515151;
 }
 
