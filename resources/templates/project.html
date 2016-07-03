@@ -11,13 +11,13 @@
         <div class="left-col" *ngIf="project.languages.length">
             <h3>Languages used:</h3>
             <ul>
-                <li *ngFor="#language of project.languages">{{ language }}</li>
+                <li *ngFor="let language of project.languages">{{ language }}</li>
             </ul>
         </div>
         <div class="right-col" *ngIf="project.frameworks.length">
             <h3>Frameworks and libraries used:</h3>
             <ul>
-                <li *ngFor="#frameworks of project.frameworks">{{ frameworks }}</li>
+                <li *ngFor="let frameworks of project.frameworks">{{ frameworks }}</li>
             </ul>
         </div>
     </div>

@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core'
-import {ROUTER_DIRECTIVES} from "angular2/router"
+import {Component} from '@angular/core'
+import {ROUTER_DIRECTIVES} from "@angular/router"
 import {ApiService} from './api.service'
 import {LoadingComponent} from './loading.component'
 import {TitleService} from "./title.service";
@@ -30,18 +30,5 @@ export class BlogsComponent {
         this.api.getCollection('Posts', 0, 30, 'Posted', false).subscribe(data => {
             this.posts = data.rows;
         });
-    }
-
-    /**
-     * Parses a date from a post
-     * @param post The post with the date in
-     * @returns {Date} The parsed date
-     */
-    public dateForPost(post) {
-        if(typeof post.posted != 'undefined') {
-            return Date.parse(post.posted);
-        }
-
-        return new Date();
     }
 }

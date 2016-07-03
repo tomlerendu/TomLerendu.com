@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core'
-import {ROUTER_DIRECTIVES} from 'angular2/router'
+import {Component} from '@angular/core'
+import {ROUTER_DIRECTIVES} from '@angular/router'
 import {TitleService} from './title.service'
 import {ApiService} from './api.service'
 import {Helpers} from './helpers'
@@ -43,18 +43,5 @@ export class AboutComponent {
         });
         
         this.title.setBlank();
-    }
-
-    /**
-     * Parses a date for a post
-     * @param post The post which has the date
-     * @returns {Date} The parsed date
-     */
-    public dateForPost(post) {
-        if(typeof post['posted'] !== undefined) {
-            return Date.parse(post['posted']);
-        }
-
-        return new Date();
     }
 }

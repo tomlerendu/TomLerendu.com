@@ -1,8 +1,8 @@
-import {Component} from 'angular2/core'
+import {Component} from '@angular/core'
 import {ApiService} from './api.service'
 import {Helpers} from './helpers'
 import {LoadingComponent} from './loading.component'
-import {ROUTER_DIRECTIVES} from "angular2/router"
+import {ROUTER_DIRECTIVES} from "@angular/router"
 import {TitleService} from './title.service';
 
 @Component({
@@ -68,18 +68,22 @@ export class ProjectsComponent {
         let projectsFiltered = [];
 
         //Go through each project
-        for(let project in this.projects) {
-            //Concat the language and framework tags together
-            let projectTags = Helpers.formatTags(this.projects[project]['languages']).concat(
-                Helpers.formatTags(this.projects[project]['frameworks'])
-            );
+        for (let project in this.projects) {
 
-            //Look at each tag
-            for(let i=0; i<projectTags.length; i++) {
-                //If the project has the required tag add it to the filtered project list
-                if (projectTags[i] === tag) {
-                    projectsFiltered.push(this.projects[project]);
-                    break;
+            if (this.projects.hasOwnProperty(project)) {
+
+                //Concat the language and framework tags together
+                let projectTags = Helpers.formatTags(this.projects[project]['languages']).concat(
+                    Helpers.formatTags(this.projects[project]['frameworks'])
+                );
+
+                //Look at each tag
+                for (let i = 0; i < projectTags.length; i++) {
+                    //If the project has the required tag add it to the filtered project list
+                    if (projectTags[i] === tag) {
+                        projectsFiltered.push(this.projects[project]);
+                        break;
+                    }
                 }
             }
         }

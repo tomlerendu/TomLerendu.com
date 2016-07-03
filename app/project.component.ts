@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core'
-import {Router} from 'angular2/router'
-import {RouteParams} from 'angular2/router'
+import {Component} from '@angular/core'
+import {Router} from '@angular/router'
+import {ActivatedRoute} from '@angular/router'
 import {TitleService} from './title.service'
 import {ApiService} from './api.service'
 import {Helpers} from './helpers';
@@ -12,7 +12,7 @@ import {Helpers} from './helpers';
 export class ProjectComponent {
 
     private helpers = Helpers;
-
+    
     private projectSlug: String;
     private project = null;
 
@@ -20,16 +20,16 @@ export class ProjectComponent {
      * Constructs a ProjectComponent instance
      * @param api
      * @param router
-     * @param routeParams
+     * @param route
      * @param title
      */
     public constructor(
         private api: ApiService,
         private router: Router,
-        private routeParams: RouteParams,
+        private route: ActivatedRoute,
         private title: TitleService
     ) {
-        this.projectSlug = routeParams.get('id');
+        this.projectSlug = route.snapshot.params['id'];
     }
 
     /**

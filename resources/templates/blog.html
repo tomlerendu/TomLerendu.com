@@ -10,7 +10,7 @@
 <header *ngIf="post">
     <h1>{{ post.title }}</h1>
     <ul class="contexts">
-        <li class="timespan"><p>{{ post.posted | date:'mediumDate' }}</p></li>
+        <li class="timespan"><p>{{ post.postedFormatted }}</p></li>
     </ul>
 </header>
 

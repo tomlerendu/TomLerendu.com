@@ -1,15 +1,16 @@
-import 'core-js/client/shim.min.js';
-import 'systemjs/dist/system-polyfills.js';
-import 'angular2/bundles/angular2-polyfills.js';
+import 'core-js/client/shim.min'
+import 'zone.js/dist/zone'
+import 'reflect-metadata/Reflect.js'
 
-import {bootstrap}    from 'angular2/platform/browser'
-import {enableProdMode} from 'angular2/core';
-import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from 'angular2/router'
-import {HTTP_PROVIDERS} from 'angular2/http'
+import {bootstrap} from '@angular/platform-browser-dynamic'
+import {enableProdMode} from '@angular/core';
+import {ROUTER_DIRECTIVES} from '@angular/router'
+import {HTTP_PROVIDERS} from '@angular/http'
 import {AppComponent} from './app.component'
 import {ApiService} from  './api.service'
 import {TitleService} from './title.service'
-import {Environment} from '../environment';
+import {Environment} from '../environment'
+import {APP_ROUTER_PROVIDERS} from './app.routes'
 
 if (Environment.mode == 'production') {
     enableProdMode();
@@ -17,7 +18,7 @@ if (Environment.mode == 'production') {
 
 bootstrap(AppComponent, [
     HTTP_PROVIDERS,
-    ROUTER_PROVIDERS,
+    APP_ROUTER_PROVIDERS,
     ROUTER_DIRECTIVES,
     ApiService,
     TitleService

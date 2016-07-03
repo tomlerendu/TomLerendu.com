@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core'
-import {RouteParams, Router} from 'angular2/router'
+import {Component} from '@angular/core'
+import {ActivatedRoute, Router} from '@angular/router'
 import {ApiService} from './api.service'
 import {LoadingComponent} from './loading.component'
 import {TitleService} from './title.service'
@@ -18,15 +18,15 @@ export class BlogComponent {
      * @param title
      * @param api
      * @param router
-     * @param routeParams
+     * @param route
      */
     constructor(
         private title: TitleService,
         private api: ApiService,
         private router: Router,
-        routeParams: RouteParams
+        private route: ActivatedRoute
     ) {
-        this.postSlug = routeParams.get('id');
+        this.postSlug = route.snapshot.params['id'];
     }
 
     /**

@@ -1,21 +1,27 @@
 {
   "name": "TomLerendu.com",
-
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
   },
-
   "dependencies": {
-    "angular2": "2.0.0-beta.7",
+    "@angular/common": "2.0.0-rc.3",
+    "@angular/compiler": "2.0.0-rc.3",
+    "@angular/core": "2.0.0-rc.3",
+    "@angular/forms": "0.1.1",
+    "@angular/http": "2.0.0-rc.3",
+    "@angular/platform-browser": "2.0.0-rc.3",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.3",
+    "@angular/router": "3.0.0-alpha.8",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.3",
     "core-js": "^2.4.0",
-    "jasmine": "^2.4.1",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
-    "systemjs": "0.19.22",
-    "zone.js": "0.5.15"
+    "intl": "^1.1.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.12"
   },
-
   "devDependencies": {
     "ts-loader": "^0.7.2",
     "typescript": "^1.7.5",
